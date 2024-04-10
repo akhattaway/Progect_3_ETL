@@ -1,2 +1,2 @@
-# Progect_3_ETL
-Proejct_3_ UT Data bootcamp copy
+# Project_3_ETL
+Project_3_ UT Data bootcamp copy
