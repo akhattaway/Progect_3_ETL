@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 # ignore Data_Resources folder
-Project_3_ETL_New/Project_3_ETLData_Resources/
+Project_3_ETL/Data_Resources/
