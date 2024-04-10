@@ -24,3 +24,6 @@ Where did those requests come from?
 What were the client types?
 
 Were they existing or new business?
+
+# cleaned data concept 
+Pulling data specific to design team schema that can be used to ask quality and revenue specific type questions.
