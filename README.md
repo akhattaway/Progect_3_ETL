@@ -26,3 +26,16 @@ What did our incoming requests for design look like in 2023 look like compared t
 
 # cleaned data concept 
 Pulling data specific to design team schema that can be used to ask quality and revenue specific type questions.
+
+# Pitch and Proposal
+https://docs.google.com/presentation/d/1hOIrGLhXub0w_o2S4OWrpsrCC7uP8d-fIVlWqbXUpx4/edit?usp=sharing
+
+# Supporting Documents
+Project Doc:
+ https://docs.google.com/document/d/1u4BBu40P_gI7WBvLOgxXhm_PxjDVFMnQbK5y3-1e7VM/edit#heading=h.49g3cyxx9zxj
+
+Transformation Mapping Sheet:
+https://docs.google.com/spreadsheets/d/1ZzDwJUF_D587ZMv1X7JD8nuMmHqMWnIENQ0bMHed_u0/edit#gid=0
+
+
+
