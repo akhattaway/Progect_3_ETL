@@ -7,7 +7,7 @@
 -- two dots ('..' - without quotes).
 
 CREATE TABLE "deals" (
-    "Deal_Table_Record_ID" int   NOT NULL,
+    "Deal_Table_Record_ID" bigint   NOT NULL,
     "Deal_Created_at" timestamp   NOT NULL,
     "Deal_Updated_at" timestamp   NOT NULL,
     "Deal_Original_Due_at" timestamp   NOT NULL,
@@ -29,9 +29,9 @@ CREATE TABLE "deals" (
 );
 
 CREATE TABLE "deals_mockups" (
-    "Deals_mockups_ID" int   NOT NULL,
-    "Deal_ID" int   NOT NULL,
-    "Mockup_ID" int   NOT NULL,
+    "Deals_mockups_ID" bigint   NOT NULL,
+    "Deal_ID" bigint   NOT NULL,
+    "Mockup_ID" bigint   NOT NULL,
     "Deals_Mockups_created_at" timestamp   NOT NULL,
     "Deals_Mockups_updated_at" timestamp   NOT NULL,
     CONSTRAINT "pk_deals_mockups" PRIMARY KEY (
@@ -40,11 +40,11 @@ CREATE TABLE "deals_mockups" (
 );
 
 CREATE TABLE "mockups" (
-    "Mockup_ID" int   NOT NULL,
+    "Mockup_ID" bigint   NOT NULL,
     "mockup_created_at" timestamp   NOT NULL,
     "Mockup_updated_at" timestamp   NOT NULL,
-    "Version_number" int   NOT NULL,
-    "Design_number" int   NOT NULL,
+    "Version_number" bigint   NOT NULL,
+    "Design_number" bigint   NOT NULL,
     "Chassis" int   NOT NULL,
     "Previously_ordered" timestamp   NOT NULL,
     "Design_source" varchar(255)   NOT NULL,
@@ -56,10 +56,10 @@ CREATE TABLE "mockups" (
 );
 
 CREATE TABLE "cart_items" (
-    "cart_items_id" int   NOT NULL,
+    "cart_items_id" bigint   NOT NULL,
     "Created_at" timestamp   NOT NULL,
     "Quantity" int   NOT NULL,
-    "Mockup_ID" int   NOT NULL,
+    "Mockup_ID" bigint   NOT NULL,
     "Mockup_version" int   NOT NULL,
     "Sock_unit_price" float   NOT NULL,
     "Pkg_unit_price" float   NOT NULL,
@@ -73,8 +73,8 @@ CREATE TABLE "cart_items" (
 );
 
 CREATE TABLE "revisions" (
-    "revisions_ID" int   NOT NULL,
-    "Mockup_ID" int   NOT NULL,
+    "revisions_ID" bigint   NOT NULL,
+    "Mockup_ID" bigint   NOT NULL,
     "Version_number" int   NOT NULL,
     "Completed_at" timestamp   NOT NULL,
     "Created_at" timestamp   NOT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE "revisions" (
 );
 
 CREATE TABLE "mfg_products" (
-    "mfg_products_ID" int   NOT NULL,
+    "mfg_products_ID" bigint   NOT NULL,
     "Mockup_ID" int   NOT NULL,
     "Created_at" timestamp   NOT NULL,
     "Updated_at" timestamp   NOT NULL,
@@ -113,10 +113,10 @@ ALTER TABLE "deals_mockups" ADD CONSTRAINT "fk_deals_mockups_Mockup_ID" FOREIGN 
 REFERENCES "cart_items" ("Mockup_ID");
 
 ALTER TABLE "mockups" ADD CONSTRAINT "fk_mockups_Mockup_ID" FOREIGN KEY("Mockup_ID")
-REFERENCES "deals_mockups" ("Mockup_ID");
+REFERENCES "cart_items" ("Mockup_ID");
 
 ALTER TABLE "cart_items" ADD CONSTRAINT "fk_cart_items_Mockup_ID" FOREIGN KEY("Mockup_ID")
-REFERENCES "mockups" ("Mockup_ID");
+REFERENCES "mfg_products" ("Mockup_ID");
 
 ALTER TABLE "revisions" ADD CONSTRAINT "fk_revisions_Mockup_ID" FOREIGN KEY("Mockup_ID")
 REFERENCES "mockups" ("Mockup_ID");
